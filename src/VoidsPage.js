@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import VoidForm from "./VoidForm";
 import VoidContainer from "./VoidContainer";
+import Header from "./Header";
 const voidsURL = "http://localhost:3000/voids";
 
 class VoidsPage extends Component {
@@ -22,7 +23,9 @@ class VoidsPage extends Component {
   render() {
     return (
       <div className="voids-page">
+        <Header />
         <VoidForm />
+
         <VoidContainer voids={this.state.voids} delete={this.handleDelete} />
       </div>
     );

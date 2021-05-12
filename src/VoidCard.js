@@ -8,9 +8,16 @@ function VoidCard(props) {
   return (
     <div className="void-card">
       <ul>
-        <li>Name : {props.voids.name}</li>
-        <li>Message: {props.voids.message}</li>
-        <li>Mood: {props.voids.mood_id}</li>
+        <li>
+          <strong>name:</strong> {props.voids.name}
+        </li>
+        <li>
+          <strong>message:</strong>
+          {props.voids.message}
+        </li>
+        <li>
+          <strong>current mood:</strong> {props.voids.mood_id}
+        </li>
       </ul>
       <button className="delete-button" onClick={handleDelete}>
         X
