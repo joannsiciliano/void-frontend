@@ -5,20 +5,33 @@ body {
   color: white;
   font-family: "Cutive Mono", monospace;
 }
+title {
+  font-family: "Cutive Mono", monospace;
+}
+option {
+  font-family: "Cutive Mono", monospace;
+}
 li {
   list-style-type: none;
   padding: 5px;
 }
 .void-form {
-  padding: 20px;
+  background-color: black;
+  padding: 15px;
   display: block;
   border-style: solid;
   border-radius: 2em;
   border-color: white;
   width: -moz-fit-content;
   text-align: center;
+  display: block;
+  margin-top: 15px;
+  margin-left: 460px;
+  margin-right: auto;
 }
+
 .void-card {
+  background-color: black;
   display: flex;
   align-content: center;
   justify-content: center;
@@ -31,12 +44,13 @@ li {
   padding-bottom: 10px;
   width: -moz-fit-content;
   width: fit-content;
-  max-width: 30%;
+  max-width: 80%;
   margin: 10px;
+  margin-left: 30px;
 }
 
 .void-form-div {
-  margin-top: 20px;
+  margin-top: 0px;
   display: flex;
   justify-content: center;
   align-content: center;
@@ -57,8 +71,15 @@ li {
 }
 
 .void-container {
+  position: absolute;
+  width: 420px;
+  padding: 10px;
+  top: 0;
+  left: 0;
+  justify-content: center;
   align-content: center;
-  overflow: auto;
+  height: 95vh;
+  overflow: overlay;
 }
 
 .message-input {
@@ -71,16 +92,20 @@ li {
 .name-input {
   font-family: "Cutive Mono", monospace;
   padding-left: 5px;
+  border-radius: 1.5rem;
+  height: 25px;
 }
-.p5-sketch {
-  height: 100vh;
-}
+
 .header {
+  /* background-color: black;
+
+  border-style: solid;
+  border-radius: 2em; */
   display: block;
-  margin-top: 30px;
-  margin-left: 460px;
+  margin-top: 5px;
+  margin-left: 440px;
   margin-right: auto;
-  width: 40%;
+  width: 29%;
 }
 .textarea {
   border-radius: 1.5em;
@@ -91,11 +116,12 @@ li {
   height: min-content;
 }
 .submit-button {
+  cursor: crosshair;
   border-style: solid;
-  border-color: black;
+  border-color: rgb(0, 255, 0);
   border-radius: 1.5em;
   padding: 5px;
-  width: 200px;
+  width: 250px;
   font-family: "Cutive Mono", monospace;
   font-style: italic;
 }
@@ -104,4 +130,19 @@ li {
   color: white;
   border-style: double;
   border-color: red;
+}
+.react-player {
+  position: absolute;
+  background-color: black;
+
+  top: 500;
+  right: 300;
+  align-content: center;
+  padding-top: 20px;
+  margin-left: 460px;
+  border-style: solid;
+  border-color: white;
+  border-radius: 2em;
+  padding: 15px;
+  margin-top: 10px;
 }

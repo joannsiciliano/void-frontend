@@ -16,7 +16,7 @@ function VoidCard(props) {
           {props.voids.message}
         </li>
         <li>
-          <strong>current mood:</strong> {props.voids.mood_id}
+          <strong>current mood:</strong> {props.voids.mood.feeling}
         </li>
       </ul>
       <button className="delete-button" onClick={handleDelete}>

@@ -7,12 +7,23 @@ const voidsURL = "http://localhost:3000/voids";
 class VoidsPage extends Component {
   state = {
     voids: [],
+    moods: [],
   };
   componentDidMount() {
-    fetch(voidsURL)
-      .then((response) => response.json())
-      .then((all_voids) => this.setState({ voids: all_voids }));
+    Promise.all([
+      fetch(voidsURL).then((response) => response.json()),
+      fetch("http://localhost:3000/moods").then((response) => response.json()),
+    ]).then(([all_voids, all_moods]) =>
+      this.setState({ moods: all_moods, voids: all_voids })
+    );
   }
+
+  addVoids = (voids) => {
+    this.setState({
+      voids: [...this.state.voids, voids],
+    });
+  };
+
   handleDelete = (voids) => {
     fetch(`${voidsURL}/${voids.id}`, {
       method: "DELETE",
@@ -20,11 +31,25 @@ class VoidsPage extends Component {
     const voidCollection = this.state.voids.filter((vd) => vd !== voids);
     this.setState({ voids: voidCollection });
   };
+
+  // displayVoids = () => {
+  //   return props.voids.map((voids) => {
+  //     console.log(voids);
+  //     return (
+  //       <VoidCard
+  //         key={this.state.voids.id}
+  //         voids={this.state.voids}
+  //         delete={this.handleDelete}
+  //       />
+  //     );
+  //   });
+  // };
+
   render() {
     return (
       <div className="voids-page">
         <Header />
-        <VoidForm />
+        <VoidForm moods={this.state.moods} addVoids={this.addVoids} />
 
         <VoidContainer voids={this.state.voids} delete={this.handleDelete} />
       </div>
