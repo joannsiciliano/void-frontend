@@ -8,11 +8,11 @@ import "./App.css";
 let angle = 0.0;
 let offset = 340;
 let scalar = 600;
-let speed = 0.1;
+let speed = 0.09;
 let angle2 = 0.0;
 let offset2 = 340;
 let scalar2 = 600;
-let speed2 = 0.18;
+let speed2 = 0.19;
 
 function App() {
   const setup = (p5, canvasParentRef) => {
@@ -60,7 +60,7 @@ function App() {
         className="react-player"
         playing={true}
         loop={true}
-        url="https://soundcloud.com/midgar_records/susumu-yokota-c1-oponchi"
+        url="https://soundcloud.com/orangemilk/galen-tipton-orbs-w-frere-tuck?in=orangemilk/sets/galen-tipton-fake-meat"
         light="https://i.imgur.com/Hxg1q5n.gif"
         volume={0.3}
         height={70}

@@ -35,10 +35,10 @@ function VoidForm(props) {
           onChange={(e) => setName(e.target.value)}
           type="text"
           className="name-input"
-          placeholder="    who are you?"
+          placeholder="............."
           required
         ></input>
-        <p>input message:</p>
+        <p>?</p>
         <textarea
           value={message}
           onChange={(e) => setMessage(e.target.value)}
@@ -46,7 +46,8 @@ function VoidForm(props) {
           name="message"
           rows="6"
           cols="50"
-          placeholder="nobody can hear you in the V O I D :) "
+          placeholder=" ☺︎ ☹︎ ☺︎ ☹︎ ☺︎ ☹︎ ☺︎ ☹︎ ☺︎ ☺︎ ☹︎ ☺︎ ☹︎ ☺︎ ☹︎ ☺︎ ☹︎ ☺︎ ☹︎ ☺︎ ☹︎ ☺︎ ☹︎ ☺︎ ☹︎
+          ☺︎ ☹︎ ☺︎ ☹︎ ☺︎ ☹︎ ☺︎ ☹︎ ☺︎ ☹︎ ☺︎ ☹︎ ☺︎ ☹︎ ☺︎ ☹︎ ☺︎ ☹︎ ☺︎ ☹︎ ☺︎ ☹︎ ☺︎ ☹︎ ☺︎ ☹︎ ☺︎ ☹︎ ☺︎ ☹︎ ☺︎ ☹︎ ☺︎ ☹︎ ☺︎ ☹︎ ☺︎ ☹︎ ☺︎ ☹︎ ☺︎ ☹︎ ☺︎ ☹︎ ☺︎ ☹︎ ☺︎ ☹︎ ☺︎ ☹︎ ☺︎ ☹︎ ☺︎ ☹︎ ☺︎ ☹︎ ☺︎ ☹︎ ☺︎ ☹︎ ☺︎ ☹︎ ☺︎ ☹︎ ☺︎ ☹︎ ☺︎ ☹︎ ☺︎ ☹︎ ☺︎ ☹︎ ☺︎ ☹︎ ☺︎ ☹︎ ☺︎ ☹︎ ☺︎ ☹︎ ☺︎ ☹︎ ☺︎ ☹︎ ☺︎ ☹︎ ☺︎ ☹︎ ☺︎ ☹︎ ☺︎ ☹︎ ☺︎ ☹︎ ☺︎ ☹︎ ☺︎ ☹︎ ☺︎ ☹︎ ☺︎ ☹︎ ☺︎ ☹︎ ☺︎ ☹︎ ☺︎ ☹︎ ☺︎ ☹︎ ☺︎ ☹︎ ☺︎ ☹︎ ☺︎ ☹︎ ☺ ☺︎ ☹︎ ☺︎ ☹︎ ☺︎ ☹︎ ☺︎ ☹︎ ☺︎ ☹︎ ☺︎ ☹︎ "
           required
         ></textarea>
         <p>current mood:</p>
@@ -58,13 +59,20 @@ function VoidForm(props) {
           required
         >
           <option className="selected-option" selected hidden required>
-            *̵͇̖̾̈́ ̸̧̯̣̱̓̓͛̕b̵̠̲̤̒͜ ̶̡̻̏͂̕͝i̵̭͈͒ ̵̫̤͔͎̿g̵̘̹͑ ̵͍̆͝m̷̨̓̓ ̸̱̽o̷̔̅͝ͅ ̴̨̝̋͑̉͂ǫ̴̝̗͘ ̵̯̉d̸͚͕̻͍̍*̵̙̑̑~̴̛̫̪̮̠̍͂͝
+            ~*-/̷̲̙̰̠͌͊͆/̶͕̏ ̶̳͕͍̒/̵̻̮͕͘.̶͚̥̊̎̐ ̴̢͖͊́̈́ͅ/̸͍͗�̸̲̙̹͒̿̆̔�̴̡̠̪̩̀.̶̥̥͐̈́͠f̸̪̿/̶̫̋̓?̸̠̂m̴̥̩̿̈́͆͒ ̶̬̰̠̉ơ̶̡͚̪͆̍ ̴̡̘͗̐o̶͈͕̖͉͋̿ ̷͖̃̇d̸̜̠̥̫͋̎̅ ̸̞̝̱̈́͋́͜(̵̥́̈́)̶̘͑͗͠;̷̢͈̈́͆̆/̵̞͎͐́̓͝ ̷̖̺͙͑̅/̸̼̗̭̰̑̈́͗̆/̵̱̾̏̋͝/̸̯̍̽~̶̡͎̉͝#̶̳͙̟͊͒̚$̴̧͇̃ȉ̶̝͙̈́̂̕x̶̳̗̑̌͘͜X̶̧̰̾{" "}
           </option>{" "}
           {props.moods.map((mood) => {
             return <option value={mood.id}>{mood.feeling}</option>;
           })}{" "}
         </select>
-        <h1>☺︎ ☻ ☺︎</h1>
+        <div className="gif-container">
+          <img
+            className="smile-gif"
+            src="https://i.imgur.com/yJ3cnoO.gif"
+            alt="happy sad gif"
+            title=":)"
+          />
+        </div>
         <input
           name="submit"
           type="submit"

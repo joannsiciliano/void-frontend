@@ -15,10 +15,3 @@ function VoidContainer(props) {
 }
 
 export default VoidContainer;
-
-// fetch("http://localhost:3000/moods")
-//   .then((response) => response.json())
-//   .then((moods) =>
-//     moods.forEach((mood) => {
-//       return <option value={mood.id}>{mood.feeling}</option>;
-//     })
