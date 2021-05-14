@@ -1,70 +1,54 @@
-# Getting Started with Create React App
+# README
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+![-](https://i.imgur.com/lQ3b1As.gif)
 
-## Available Scripts
+// Welcome to the VOID™.
 
-In the project directory, you can run:
+Relax, enjoy the music, the atmosphere, scream into the digital abyss :)
 
-### `yarn start`
+The VOID™ was created with the intention of making a space for catharsis. Wether you are feeling frustrated, depressed, elated, or you have thought about climate change too hard, the VOID™ hears you and does not judge.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Of course, there are no "users" in this space. Fill out the form to scream into the abyss. Once an entry has been created, you may ONLY delete it. You may also delete other entries not made by you that may appear into the VOID™.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+While themes of catharsis, ego death, and uncertainty have played a huge role in this project , I also wanted to portray the dichotomy that social media has played in our collective subconscious. While you (the protagonist of your own story) writes into the VOID™ in an emotionally cathartic way, other "users" may simply delete your entry without even bothering to read it (similarly to "liking" a post on social media without reading it's content).
 
-### `yarn test`
+Likewise, deleting entries that come up from other "users" feel fun, because, even though humans are complex creatures, we also like to clika da button. It may even feel good to delete your own entry !
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+After all, nothing is permanent in the VOID™ ;)
 
-### `yarn build`
+## Code Example
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```
+ //fetches both URLS in promise and setState
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+    Promise.all([
+      fetch(voidsURL).then((response) => response.json()),
+      fetch(moodsURL).then((response) => response.json()),
+    ]).then(([all_voids, all_moods]) =>
+      this.setState({ moods: all_moods, voids: all_voids })
+    );
+  }
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+// deletes void entry from front and backend
+  handleDelete = (voids) => {
+    fetch(`${voidsURL}/${voids.id}`, {
+      method: "DELETE",
+    });
+    const voidCollection = this.state.voids.filter((vd) => vd !== voids);
+    this.setState({ voids: voidCollection });
+  };
+```
 
-### `yarn eject`
+## Demo
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+[![void](http://img.youtube.com/vi/t5652l8Vqsw/0.jpg)](https://www.youtube.com/watch?v=t5652l8Vqsw "The Void Becomes You")
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Technologies
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+technologies used: React.js, Ruby on Rails, p5.js, HTML5/CSS, and postgresQL. This app is live and hosted through Heroku and Firebase, and created as a phase 3 project for Flatiron School in Denver. While the app is functional, users will only be able to see new entries upon refresh. I plan on implementing Faye websockets in the near future to make the app more responsive. :)
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+![-](https://i.imgur.com/hkdLbtZ.jpg)
 
-## Learn More
+[LinkdIn](https://www.linkedin.com/in/joannsiciliano/)
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+scream into the abyss [=== h e r e ===](https://the-void-becomes-you.web.app/)
