@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import VoidForm from "./VoidForm";
 import VoidContainer from "./VoidContainer";
 import Header from "./Header";
-const voidsURL = "https://the-void-becomes-you.herokuapp.com/";
+const voidsURL = "https://the-void-becomes-you.herokuapp.com/voids";
 
 class VoidsPage extends Component {
   state = {
