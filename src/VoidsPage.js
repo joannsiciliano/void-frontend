@@ -12,7 +12,9 @@ class VoidsPage extends Component {
   componentDidMount() {
     Promise.all([
       fetch(voidsURL).then((response) => response.json()),
-      fetch("http://localhost:3000/moods").then((response) => response.json()),
+      fetch("https://the-void-becomes-you.herokuapp.com/moods").then(
+        (response) => response.json()
+      ),
     ]).then(([all_voids, all_moods]) =>
       this.setState({ moods: all_moods, voids: all_voids })
     );
