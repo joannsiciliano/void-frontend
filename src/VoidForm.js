@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const voidsURL = "http://localhost:3000/voids";
+const voidsURL = "https://the-void-becomes-you.herokuapp.com/voids";
 
 function VoidForm(props) {
   const [name, setName] = useState("");
@@ -24,7 +24,10 @@ function VoidForm(props) {
       .then((response) => response.json())
       .then((v) => props.addVoids(v))
       .then(console.log);
-    e.target.reset();
+
+    setName("");
+    setMessage("");
+    setMood("");
   };
   return (
     <div className="void-form-div">
